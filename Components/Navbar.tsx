@@ -95,9 +95,9 @@ priority
       {/* Menu */}
       <div className="flex flex-col gap-3 text-center">
         {NavItems.map((item) => (
-           <Link href={item.path}  key={item.name} onClick={toggleMenu}>
+           <Link href={item.path} onClick={toggleMenu}>
           <button
-           
+            key={item.name}
             onClick={() => setActive(item.name)}
             className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all
                 ${
