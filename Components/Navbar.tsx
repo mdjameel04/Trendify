@@ -19,8 +19,10 @@ const toggleMenu = () => {
   return (
     <nav className="flex items-center justify-between bg-white text-black py-4 px-16">
       {/* logo */}
-      <div className="flex items-center gap-4">
-        <Image src="/logo.png" alt="logo" width={30} height={30} />
+      <div className="flex items-center gap-3">
+<Image src="/logo.png" alt="logo" width={80} height={80}  className="w-20 h-20" loading="eager"
+priority
+ />
         <h1 className="text-lg font-semibold">Trendify</h1>
       </div>
 
@@ -93,9 +95,9 @@ const toggleMenu = () => {
       {/* Menu */}
       <div className="flex flex-col gap-3 text-center">
         {NavItems.map((item) => (
-           <Link href={item.path} onClick={toggleMenu}>
+           <Link href={item.path}  key={item.name} onClick={toggleMenu}>
           <button
-            key={item.name}
+           
             onClick={() => setActive(item.name)}
             className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all
                 ${

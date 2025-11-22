@@ -1,11 +1,13 @@
 import React from 'react'
-
-const page = () => {
+import Image from 'next/image'
+const HomePage = () => {
   return (
-    <div >
-   <h1 className='text-2xl text-yellow-400 underline text-center'> hello World</h1>
+    <div className=' md:px-20'>
+<div className='relative aspect-3/1'>
+<Image  src="/hero-image.png" alt='hero' fill />
+</div>
     </div>
   )
 }
 
-export default page
+export default HomePage
