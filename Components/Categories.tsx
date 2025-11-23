@@ -1,8 +1,74 @@
-import React from 'react'
-
+"use client"
+import {
+  Footprints,
+  Glasses,
+  Briefcase,
+  Shirt,
+  ShoppingBasket,
+  Hand,
+  Venus,
+} from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 const Categories = () => {
+
+const categories = [
+  {
+    name: "All",
+    icon: <ShoppingBasket className="w-4 h-4" />,
+    slug: "all",
+  },
+  {
+    name: "T-shirts",
+    icon: <Shirt className="w-4 h-4" />,
+    slug: "t-shirts",
+  },
+  {
+    name: "Shoes",
+    icon: <Footprints className="w-4 h-4" />,
+    slug: "shoes",
+  },
+  {
+    name: "Accessories",
+    icon: <Glasses className="w-4 h-4" />,
+    slug: "accessories",
+  },
+  {
+    name: "Bags",
+    icon: <Briefcase className="w-4 h-4" />,
+    slug: "bags",
+  },
+  {
+    name: "Dresses",
+    icon: <Venus className="w-4 h-4" />,
+    slug: "dresses",
+  },
+  {
+    name: "Jackets",
+    icon: <Shirt className="w-4 h-4" />,
+    slug: "jackets",
+  },
+  {
+    name: "Gloves",
+    icon: <Hand className="w-4 h-4" />,
+    slug: "gloves",
+  },
+];
+
+ const searchParams = useSearchParams()
+ const selectCategory = searchParams.get("category")
+ const router = useRouter()
+ const hanleChange = (value:String| null)=>{
+  router.push(`/?category=${value}`)
+ }
   return (
-    <div >
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 bg-gray-100 p-2 rounded-lg mb-4 text-sm mt-2">
+      {categories.map((category)=>(
+        <div className={`flex items-center justify-center cursor-pointer gap-2 px-2 py-1 rounded-md ${category.slug===selectCategory? "bg-white" : "text-gray-500"}`} key={category.name}
+        onClick={()=>hanleChange(category.slug)}>
+           {category.icon}
+           {category.name}
+        </div>
+      ))}
     </div>
   ) 
 }

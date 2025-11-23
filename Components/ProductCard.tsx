@@ -7,4 +7,4 @@ const ProductCard = ({product}:{product:productType} ) => {
   )
 }
 
-export default ProductCard
+export default ProductCard   
