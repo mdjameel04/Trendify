@@ -93,7 +93,7 @@ priority
       </button>
 
       {/* Menu */}
-      <div className="flex flex-col gap-3 text-center">
+      <div className="flex flex-col gap-3 text-center z-50">
         {NavItems.map((item) => (
            <Link href={item.path} onClick={toggleMenu}>
           <button
