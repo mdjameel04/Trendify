@@ -1,3 +1,5 @@
+"use client"
+
 import { productsType } from '@/utils/assets';
 import React from 'react'
 import Categories from './Categories';
@@ -120,9 +122,9 @@ const products: productsType  = [
 
 const ProductList = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full lg:px-20'>
         <Categories/>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 p-2 bg-gray-100 rounded-lg mb-4 text-sm'> 
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2 bg-gray-100 rounded-lg mb-4 text-sm'> 
        {products.map(product=>(
         <ProductCard key={product.id} product={product} />
        ))}
