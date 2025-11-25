@@ -61,7 +61,7 @@ const Navbar = () => {
                 className={`absolute bottom-0 left-0 h-[3px] w-full rounded-full transition-all duration-300
                   ${
                     isActive
-                      ? "bg-gradient-to-l from-pink-600 to-purple-600"
+                      ? "bg-linear-to-l from-pink-600 to-purple-600"
                       : "bg-transparent group-hover:bg-red-400"
                   }
                 `}
@@ -89,7 +89,7 @@ const Navbar = () => {
       {/* Mobile Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-[#0f0f11] text-white p-6 flex flex-col justify-between 
-        transform transition-transform duration-300 z-[999]
+        transform transition-transform duration-300
         ${menuOpen ? "translate-x-0" : "translate-x-full"}
       `}
       >
